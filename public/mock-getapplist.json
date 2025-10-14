@@ -1,0 +1,34 @@
+{
+  "applist": {
+    "apps": [
+      {
+        "appid": 1,
+        "name": "Counter Strike"
+      },
+      {
+        "appid": 2,
+        "name": "Dota 2"
+      },
+      {
+        "appid": 3,
+        "name": "PUBG"
+      },
+      {
+        "appid": 4,
+        "name": "Apex Legends"
+      },
+      {
+        "appid": 5,
+        "name": "Fortnite"
+      },
+      {
+        "appid": 6,
+        "name": "New World: Aeternum"
+      },
+      {
+        "appid": 2807960,
+        "name": "Battlefield™ 6"
+      }
+    ]
+  }
+}
