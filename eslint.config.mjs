@@ -13,6 +13,7 @@ export default defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    'coverage/**',
   ]),
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
@@ -26,6 +27,14 @@ export default defineConfig([
     },
     rules: {
       'react/react-in-jsx-scope': 'off',
+    },
+  },
+  {
+    files: ['**/*.test.{js,ts,jsx,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.jest,
+      },
     },
   },
 ]);

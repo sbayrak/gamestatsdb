@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ReactNode } from 'react';
+import { ThemeProvider } from '@/components/theme-provider';
+import Header from '@/components/header/header';
 
 export const metadata: Metadata = {
   title: 'GamestatsDB | Steam Game Stats Database',
@@ -20,9 +22,17 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body className='antialiased'>
-        <div className='toolbar'>{children}</div>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
