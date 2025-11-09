@@ -1,5 +1,5 @@
-import { Game } from '@/app/api/trending';
 import { Apple, Bird, Grid2X2 } from 'lucide-react';
+import { Game } from '../types';
 
 type PlatformsProps = Pick<Game, 'platforms'>;
 
