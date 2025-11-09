@@ -13,7 +13,6 @@ import Layout from '@/components/layout/Layout';
 export default async function Trending() {
   const games = await getTrendingGames();
 
-  console.log('games are ', games);
   return (
     <Layout>
       <div className='bg-primary/5 relative border border-primary/30 border-solid rounded mx-auto p-2 shadow'>
