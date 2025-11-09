@@ -1,8 +1,10 @@
-import type { Metadata } from 'next';
-import './globals.css';
-import { ReactNode } from 'react';
-import { ThemeProvider } from '@/components/theme-provider';
 import Header from '@/components/header/header';
+import { ThemeProvider } from '@/components/theme-provider';
+import { HEADER_HEIGHT } from '@/shared/constants/constants';
+import clsx from 'clsx';
+import type { Metadata } from 'next';
+import { ReactNode } from 'react';
+import './globals.css';
 
 export const metadata: Metadata = {
   title: 'GamestatsDB | Steam Game Stats Database',
@@ -31,6 +33,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          {/* div below serves as a buffer header height */}
+          <div className={clsx(`${HEADER_HEIGHT} mt-4`)} />
           {children}
         </ThemeProvider>
       </body>
