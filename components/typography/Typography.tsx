@@ -9,6 +9,8 @@ export default function Typography({ text, type }: TypographyProps) {
   const textSize = type === 'heading' ? 'text-4xl' : 'text-2xl';
 
   return (
-    <span className={clsx('text-primary', 'text-2xl', textSize)}>{text}</span>
+    <span className={clsx('text-primary', 'text-2xl', 'font-bold', textSize)}>
+      {text}
+    </span>
   );
 }
