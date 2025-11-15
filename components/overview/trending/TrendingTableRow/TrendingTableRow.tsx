@@ -34,6 +34,10 @@ export default function TrendingTableRow({
   price,
   rank,
 }: TrendingTableRowProps) {
+  const peakInGameFormatted = new Intl.NumberFormat('de-DE').format(
+    peak_in_game
+  );
+
   return (
     <TableRow>
       <TableCell>
@@ -46,7 +50,9 @@ export default function TrendingTableRow({
         />
       </TableCell>
       <TableCell className='text-center font-bold'>{name}</TableCell>
-      <TableCell className='text-center font-bold'>{peak_in_game}</TableCell>
+      <TableCell className='text-center font-bold'>
+        {peakInGameFormatted}
+      </TableCell>
       <TableCell className='text-center font-bold  h-full'>
         <LastWeekRank rank={rank} last_week_rank={last_week_rank} />
       </TableCell>

@@ -1,4 +1,4 @@
-import { Game, GetMostPlayedGames } from './types';
+import { Game, GameDetails, GetMostPlayedGames } from './types';
 
 export async function getTrendingGames(): Promise<Game[]> {
   const res = await fetch(
@@ -15,14 +15,19 @@ export async function getTrendingGames(): Promise<Game[]> {
   const detailedGames: Array<Game> = await Promise.all(
     games.map(async (game) => {
       const detailsRes = await fetch(
-        `https://store.steampowered.com/api/appdetails?appids=${game.appid}`,
+        `https://store.steampowered.com/api/appdetails?appids=${game.appid}&cc=de&l=english`,
+
         {
           next: { revalidate: 3600 },
         }
       );
 
-      const detailsData = await detailsRes.json();
+      const detailsData = (await detailsRes.json()) as GameDetails;
       const info = detailsData[game.appid]?.data;
+
+      if (info.name.includes('battlefield')) {
+        console.log('trending log ', info);
+      }
 
       return {
         appid: game.appid,
