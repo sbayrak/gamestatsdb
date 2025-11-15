@@ -18,6 +18,18 @@ type Platforms = {
   linux: boolean;
 };
 
+type Genre = {
+  id: string;
+  description: string;
+};
+
+export interface GameDetails {
+  [key: string]: {
+    success: boolean;
+    data: Game;
+  };
+}
+
 export interface Game {
   appid: number;
   rank: number;
@@ -30,4 +42,5 @@ export interface Game {
     final_formatted: string;
   };
   platforms: Platforms;
+  genres?: Array<Genre>;
 }

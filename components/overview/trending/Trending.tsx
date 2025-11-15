@@ -1,35 +1,35 @@
-import Typography from '@/components/typography/Typography';
+import Typography from "@/components/typography/Typography";
 import {
   Table,
   TableBody,
   TableHead,
   TableHeader,
   TableRow,
-} from '@/components/ui/table';
-import { getTrendingGames } from './api';
-import TrendingTableRow from './TrendingTableRow/TrendingTableRow';
-import Layout from '@/components/layout/Layout';
+} from "@/components/ui/table";
+import { getTrendingGames } from "./api";
+import TrendingTableRow from "./TrendingTableRow/TrendingTableRow";
+import Layout from "@/components/layout/Layout";
 
 export default async function Trending() {
   const games = await getTrendingGames();
 
   return (
-    <Layout>
-      <div className='bg-primary/5 relative border border-primary/30 border-solid rounded mx-auto p-2 shadow'>
-        <Typography text='Trending Games' type='subtitle' />
-        <Table>
+    <Layout className="w-full">
+      <div className="bg-primary/5 relative border border-primary/30 border-solid rounded mx-auto p-2 shadow">
+        <Typography text="Trending Games" type="subtitle" />
+        <Table className="w-full">
           <TableHeader>
             <TableRow>
               <TableHead></TableHead>
-              <TableHead className='text-center font-bold'>Name</TableHead>
-              <TableHead className='text-center'>Peak Players</TableHead>
-              <TableHead className='text-center'>Last Week Rank</TableHead>
-              <TableHead className='text-center'>Platforms</TableHead>
-              <TableHead className='text-center'>Price</TableHead>
-              <TableHead className='text-center'>Steam Link</TableHead>
+              <TableHead className="text-center font-bold">Name</TableHead>
+              <TableHead className="text-center">Peak Players</TableHead>
+              <TableHead className="text-center">Last Week Rank</TableHead>
+              <TableHead className="text-center">Platforms</TableHead>
+              <TableHead className="text-center">Price</TableHead>
+              <TableHead className="text-center">Steam Link</TableHead>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody className="w-full">
             {games.map((game) => (
               <TrendingTableRow
                 key={game.appid}
