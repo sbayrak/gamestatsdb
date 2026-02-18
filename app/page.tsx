@@ -3,7 +3,7 @@ import { Trending, TopSellers } from "@/components/overview";
 
 export default async function Home() {
   return (
-    <div className="flex flex-col gap-y-8">
+    <div className="flex flex-col justify-center items-center gap-y-8 w-full">
       <Hero />
       <TopSellers />
       <Trending />
