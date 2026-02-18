@@ -1,20 +1,20 @@
-import Header from '@/components/header/header';
-import { ThemeProvider } from '@/components/theme-provider';
-import { HEADER_HEIGHT } from '@/shared/constants/constants';
-import clsx from 'clsx';
-import type { Metadata } from 'next';
-import { ReactNode } from 'react';
-import './globals.css';
+import Header from "@/components/header/header";
+import { ThemeProvider } from "@/components/theme-provider";
+import { HEADER_HEIGHT } from "@/shared/constants/constants";
+import clsx from "clsx";
+import type { Metadata } from "next";
+import { ReactNode } from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: 'GamestatsDB | Steam Game Stats Database',
+  title: "GamestatsDB | Steam Game Stats Database",
   description:
-    'A database of Steam game statistics, including player counts, achievements, and more.',
-  applicationName: 'GamestatsDB',
+    "A database of Steam game statistics, including player counts, achievements, and more.",
+  applicationName: "GamestatsDB",
   appleWebApp: {
-    title: 'GamestatsDB',
+    title: "GamestatsDB",
     capable: true,
-    statusBarStyle: 'default',
+    statusBarStyle: "default",
   },
 };
 
@@ -24,11 +24,11 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className='antialiased'>
+    <html lang="en" suppressHydrationWarning>
+      <body className="antialiased">
         <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
+          attribute="class"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >

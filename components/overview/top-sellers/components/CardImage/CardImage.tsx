@@ -11,9 +11,10 @@ export default function CardImage({ alt, src }: CardImageProps) {
       <Image
         src={src}
         alt={alt}
-        fill
-        sizes="(max-width: 1024px) 50vw, 33vw"
-        className="absolute top-0 left-0 object-fill"
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="w-full h-auto"
       />
     </div>
   );

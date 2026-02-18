@@ -17,14 +17,12 @@ import CardImage from "./components/CardImage/CardImage";
 export default async function TopSellers() {
   const topSellers = await getTopSellersData();
 
-  console.log("topSellers", topSellers);
-
   return (
-    <Layout>
-      <div className="bg-primary/5 relative border border-primary/30 border-solid rounded mx-auto p-2 shadow">
+    <Layout className="w-full">
+      <div className="bg-primary/5 relative border border-primary/30 border-solid rounded p-2 shadow">
         <Typography text="Top Sellers" type="subtitle" />
 
-        <div className="w-full flex flex-row justify-center items-center mt-6">
+        <div className="w-full mt-6">
           <Carousel
             opts={{
               align: "start",
@@ -36,10 +34,10 @@ export default async function TopSellers() {
               {topSellers?.map((topSeller) => (
                 <CarouselItem
                   key={topSeller.id}
-                  className="basis-1/2 lg:basis-1/3"
+                  className="basis-1/1 lg:basis-1/3"
                 >
                   <div className="p-1">
-                    <Card className="border-2 border-primary/75 border-solid shadow shadow-primary overflow-hidden p-0">
+                    <Card className="border-2 border-primary/75 border-solid shadow shadow-primary overflow-hidden p-0 ">
                       <Link
                         href={`https://store.steampowered.com/app/${topSeller.id}`}
                         target="_blank"
