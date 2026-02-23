@@ -1,6 +1,7 @@
 import Header from "@/components/header/header";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HEADER_HEIGHT } from "@/shared/constants/constants";
+import { Footer } from "@/components/footer/footer";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+      <body className="antialiased flex flex-col min-h-screen">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -35,7 +36,8 @@ export default function RootLayout({
           <Header />
           {/* div below serves as a buffer header height */}
           <div className={clsx(`${HEADER_HEIGHT} mt-4`)} />
-          {children}
+          <main className="flex-grow">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
