@@ -55,7 +55,7 @@ export default async function TopSellers() {
                         />
                         <Price
                           {...(topSeller.discounted && {
-                            discountedPrice: topSeller.original_price,
+                            discountedPrice: topSeller.original_price / 100,
                           })}
                           price={topSeller.final_price / 100}
                         />
