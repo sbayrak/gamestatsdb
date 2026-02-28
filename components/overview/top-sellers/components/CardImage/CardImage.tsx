@@ -7,7 +7,7 @@ interface CardImageProps {
 
 export default function CardImage({ alt, src }: CardImageProps) {
   return (
-    <div className="relative aspect-video w-full">
+    <div className="relative w-full">
       <Image
         src={src}
         alt={alt}

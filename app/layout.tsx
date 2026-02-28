@@ -6,6 +6,7 @@ import clsx from "clsx";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import "./globals.css";
+import { Providers } from "@/components/providers";
 
 export const metadata: Metadata = {
   title: "GamestatsDB | Steam Game Stats Database",
@@ -27,18 +28,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased flex flex-col min-h-screen">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {/* div below serves as a buffer header height */}
-          <div className={clsx(`${HEADER_HEIGHT} mt-4`)} />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {/* div below serves as a buffer header height */}
+            <div className={clsx(`${HEADER_HEIGHT} mt-4`)} />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
